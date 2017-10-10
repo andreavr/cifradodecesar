@@ -1,15 +1,23 @@
-//creando una funcion cipher
-function cipher (string, key){
-    //creando un contador donde iran los indices en forma de string
-    var count = '';
-    //haciendo un bucle que pase elemento por elemento
-      for(i=0;i<string.length;i++){
-          //utilizamos la funcion string.charCodeAt y pasa como string en count, caracter por caracter
-       count = count + string.charCodeAt(i);
-      }
-      //retornamos count para ver los nuevos caracteres ASCII en forma de string
-     return count;
+// Pedimos una frase al usuario que quiera cifrar
+// Creamos una funcion cipher
+function cipher (text, n) { 
+    // Creamos una variable result, donde se almacenara nuestro resultado en modo de string
+    var result = " ";
+    // Hacemos un bucle que pase elemento por elemento
+    for (i = 0; i < text.length; i++) {
+      // Creamos una variable letters para almacenar el codigo ASCII de cada caracter
+      var letters = text.charCodeAt(i);
+      // Creamos un algoritmo en el caso sean mayusculas
+      if (65 <= letters && letters <=  90) {
+        result += String.fromCharCode((letters - 65 + n) % 26 + 65);}  
+      // Creamos un algoritmo en el caso sean minusculas
+      else if (97 <= letters && letters <= 122){
+        result += String.fromCharCode((letters - 97 + n) % 26 + 97);}  
+      // Si el usuario no coloca letras mandar un alert
+      else {
+        alert ("Texto no valido");}
     }
-    //creamos un prompt que pregunta al usuario que desea realizar 
-    var question = prompt("¿Qué deseas realizar? \n 1) cifrar \n 2)descifrar")
-    console.log(cipher("ABC"));
+    return result;
+  }
+  
+  console.log (cipher (prompt ("Escriba una frase para cifrar"), 33));
