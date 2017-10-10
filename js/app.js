@@ -43,4 +43,4 @@ function cipher (text, n) {
     return result;
   }
   //Hacemos un prompt que sera el argumento para nuestra funcion para poder llamarla
-  console.log(decipher (prompt ("Escriba un texto descifrar"))
+  console.log(decipher (prompt ("Escriba un texto para descifrar"))
