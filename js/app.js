@@ -1,5 +1,5 @@
 //creando una funcion cipher
-function cipher (string){
+function cipher (string, key){
     //creando un contador donde iran los indices en forma de string
     var count = '';
     //haciendo un bucle que pase elemento por elemento
